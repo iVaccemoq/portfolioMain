@@ -1,0 +1,16 @@
+.aside-panel{
+    display: flex;
+    &__img-wrapper{
+        width: 68px;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid #1E2D3D; 
+        height: 834px;
+        align-items: center;
+    }
+    &__img{
+        width: 25px;
+        height: 25px;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,76 @@
+.aboutme{
+    width: 521px;
+    &__hi{
+        color: #E5E9F0;
+        font-family: Fira Code;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 450;
+        line-height: normal;
+    }
+    &__name{
+        color: #E5E9F0;
+        font-family: Fira Code;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    &__offer{
+        color: #4D5BCE;
+        font-family: Fira Code;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 450;
+        line-height: normal;
+    }
+    &__comment{
+        margin-top: 81px;
+        color: #607B96;
+        font-family: Fira Code;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 450;
+        line-height: normal;
+        &_mt{
+            margin-top: 10px;
+        }
+    }
+    &__github{
+        margin-top: 10px;
+        color: #4D5BCE;
+        font-family: Fira Code;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        span{
+            font-family: Fira Code;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+
+            &:nth-child(1){
+                color: #43D9AD;
+            }
+            &:nth-child(2) {
+                color: white;
+            }
+        }
+    }
+    &__ref{
+        color: #E99287;
+        font-family: Fira Code;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-decoration-line: underline;
+        text-decoration: none;
+        &:hover{
+            color: #E99287;
+        }
+    }
+
+}

@@ -1,0 +1,30 @@
+@import '../../style/variables.scss';
+
+.App{
+    position: relative;
+    width: 1782px;
+    height: 941.32px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid #1E2D3D;
+    background: $bgc;
+    &__wrapper{
+        margin-top: 180px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__blur{
+        position: absolute;
+        &:nth-child(2) {
+            top: -28px;
+            right: 221px;
+        }
+        &:nth-child(3) {
+            bottom: -134px;
+            right: 100px;
+        }
+    }
+}
+
+

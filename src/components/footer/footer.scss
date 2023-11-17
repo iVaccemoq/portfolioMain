@@ -1,0 +1,54 @@
+@import '../../style/variables.scss';
+
+
+.footer{
+    display: flex;
+    border-top: 1px solid #1E2D3D;
+    transform: translateY(180px);
+    justify-content: space-between;
+    height: 50px;
+    &__find-me{
+        border-right: 1px solid #1E2D3D; 
+        width: 146px;
+        color: #607B96;
+        font-family: Fira Code;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 450;
+        line-height: normal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__wrapper{
+        display: flex;
+    }
+    &__img{
+        width: 24px;
+        height: 27px;
+    }
+    &__link{
+        border-right: 1px solid #1E2D3D; 
+        width: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:nth-child(1){
+            border: none;
+        }
+    }
+    &__username{
+        border-left: 1px solid #1E2D3D; 
+        width: 161px;
+        display: flex;
+        color: #607B96;
+        font-family: Fira Code;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 450;
+        line-height: normal;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+}
