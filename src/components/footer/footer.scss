@@ -4,9 +4,11 @@
 .footer{
     display: flex;
     border-top: 1px solid #1E2D3D;
-    transform: translateY(180px);
+    position: absolute;
     justify-content: space-between;
     height: 50px;
+    width: 100%;
+    bottom: 0;
     &__find-me{
         border-right: 1px solid #1E2D3D; 
         width: 146px;

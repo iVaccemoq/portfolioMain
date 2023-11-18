@@ -1,0 +1,16 @@
+.scroll{
+    position: absolute;
+    top: 40px;
+    right: 0;
+    height: 794px;
+    border-left: 1px solid #1E2D3D;
+    padding-top: 5px;
+    width: 26px;
+    padding-right: 4px;
+    padding-left: 3px;
+    &__block{
+        width: 18px;
+        height: 7px;
+        background: #607B96;
+    }
+}
