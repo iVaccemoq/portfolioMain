@@ -2,10 +2,10 @@ import close from '../../resourses/close.svg';
 
 import './window.scss'
 
-const Window = () => {
+const Window = (props) => {
     return (
         <div className="window">
-            personal-info
+            {props.window}
             <img className='window__img' src={close} alt="close" />
         </div>
     )

@@ -8,6 +8,7 @@ import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import FirstRouteWrapper from '../firstRouteWrapper/FirstRouteWrapper';
 import SecondRouteWrapper from '../SecondRouteWrapper/SecondRouteWrapper';
+import ThirdRouteWrapper from '../thirdRouteWrapper/ThirdRouteWrapper';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
 
           <Route path='/' element={<FirstRouteWrapper />} key={1}/>
           <Route path='/about' element={<SecondRouteWrapper />} key={2}/>
-          
+          <Route path='/projects' element={<ThirdRouteWrapper />} key={3}/>
         </Routes>
 
         <Footer/>

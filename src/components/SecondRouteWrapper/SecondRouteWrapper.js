@@ -5,15 +5,15 @@ import Window from "../window/Window";
 import MainScreenEntralis from "../mainScreenEntralis/MainScreenEntralis";
 import Scroll from "../scroll/Scroll";
 
-
 const SecondRouteWrapper = () => {
     return (
         <main className="App__two-page-wrapper">
             <Gpspanel>
-                <AsideEntrails/>
+                <AsideEntrails filter='personal-info'/>
+                <AsideEntrails filter='contacts'/>
             </Gpspanel>
-                <MainScreen>
-                <Window/>
+            <MainScreen>
+                <Window window='personal-info'/>
                 <MainScreenEntralis/>
                 <Scroll/>
             </MainScreen>

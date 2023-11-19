@@ -9,7 +9,10 @@
     font-weight: 400;
     line-height: normal;
     padding: 9px 12px 9px 14px;
+    position: relative;
     &__img{
-        margin-left: 49px;
+        position: absolute;
+        right: 15px;
+        cursor: pointer;
     }
 }

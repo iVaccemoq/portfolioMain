@@ -5,6 +5,13 @@
         display: flex;
         width: 100%;
         border-top: 1px solid #1E2D3D;
+        &_third-page{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            padding: 115px 151px 328px 127px;
+            justify-content: space-between;
+        }
     }
     &__number{
         display: flex;
@@ -30,5 +37,65 @@
         font-weight: 450;
         line-height: 150%;
         margin-top: 18px;
+    }
+    &__project{
+        color: #5565E8;
+        font-family: Fira Code;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    &__descr{
+        color: #607B96;
+        font-family: Fira Code;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 450;
+        line-height: normal;
+    }
+    &__work-block{
+        margin-top: 15px;
+        width: 370.348px;
+        height: 314.817px;
+        border-radius: 15px;
+        border: 1px solid #1E2D3D;
+        background: #011221;
+        position: relative;
+    }
+    &__txt{
+        margin: 0;
+        color: #607B96;
+        font-family: Fira Code;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 450;
+        line-height: 150%;
+        margin-top: 24px;
+        margin-left: 31px;
+    }
+    &__button{
+        border: none;
+        display: inline-flex;
+        padding: 10px 14px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 8px;
+        background: #1C2B3A;
+        color: #FFF;
+        text-align: right;
+        font-family: Fira Code;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 450;
+        line-height: normal;
+        margin-left: 31px;
+        margin-top: 22px;
+    }
+    &__framework{
+        position: absolute;
+        top: 19px;
+        right: 17px;
     }
 }

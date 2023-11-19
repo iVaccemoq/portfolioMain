@@ -1,5 +1,3 @@
-import Window from "../window/Window";
-import Scroll from "../scroll/Scroll";
 
 import './mainScreen.scss'
 
