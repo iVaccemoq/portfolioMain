@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom/cjs/react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './header.scss'
 
@@ -8,17 +8,17 @@ const Header = () => {
             <ol className="header__wrapper">
                 <li className="header__info">Vasilivanov-Konstantin</li>
                 <li className="header__info">
-                    <a href="/">_hello</a>
+                    <Link to="/">_hello</Link>
                 </li>
                 <li className="header__info">
-                    <a href="/about">_about-me</a>
+                    <Link to="/about">_about-me</Link>
                 </li>
                 <li className="header__info">
-                    <a href="/projects">_projects</a>
+                    <Link to="/projects">_projects</Link>
                 </li>
             </ol>
             <div className="header__contact-me header__info">
-                <a href="/contact">_contact-me</a>
+                <Link to="/contact">_contact-me</Link>
             </div>
         </header>
     )
