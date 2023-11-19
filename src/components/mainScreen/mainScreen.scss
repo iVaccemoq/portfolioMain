@@ -12,6 +12,10 @@
             padding: 115px 151px 328px 127px;
             justify-content: space-between;
         }
+        &_fourth-page{
+            padding-right: 75px;
+            padding-left: 128px;
+        }
     }
     &__number{
         display: flex;
@@ -97,5 +101,54 @@
         position: absolute;
         top: 19px;
         right: 17px;
+    }
+    &__form{
+        display: flex;
+        width: 502px;
+        flex-direction: column;
+        border-right: 1px solid #1E2D3D;
+        height: 794px;
+    }
+    &__label{
+        color: #607B96;
+        font-family: Fira Code;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 450;
+        line-height: normal;
+        margin-bottom: 10px;
+        &:nth-child(1) {
+            margin-top: 115px;
+        }
+    }
+    &__input{
+        width: 372px;
+        height: 41px;
+        border-radius: 8px;
+        border: 1px solid #1E2D3D;
+        background: #011221;
+        margin-bottom: 24px;
+        &:nth-child(6) {
+            height: 145px;
+        }
+    }
+    &__form-button{
+        display: inline-flex;
+        padding: 10px 14px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 8px;
+        background: #1C2B3A;
+        color: #FFF;
+        text-align: right;
+        font-family: Fira Code;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 450;
+        line-height: normal;
+        width: 146px;
+        height: 38px;
+        border: none;
     }
 }

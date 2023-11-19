@@ -18,7 +18,7 @@ const Header = () => {
                 </li>
             </ol>
             <div className="header__contact-me header__info">
-                <Link to="/contact">_contact-me</Link>
+                <Link to="/contacts">_contact-me</Link>
             </div>
         </header>
     )
