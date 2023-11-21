@@ -20,7 +20,9 @@ const SecondRouteWrapper = () => {
     const [arrowDegPersonal, setArrowDegPersonal] = useState("aside-panel__big-arrow aside-panel__big-arrow_deg")
     const [arrowDegContacts, setArrowDegContacts] = useState("aside-panel__big-arrow ")
     const [personalInfoEntrails, setPersonalInfoEntrails] = useState('App__two-page-info-about')
-    const [windowName, setWindowName] = useState(['personal-info',''])
+    const [windowName, setWindowName] = useState(['personal-info; bio','', ''])
+    const [activeBio, setActiveBio] = useState(true)
+    const [activeEducation, setActiveEducation] = useState(false)
 
     const changeVisible = (e) => {
         if (e.target.getAttribute('data-aside') === 'personal') {
@@ -28,12 +30,14 @@ const SecondRouteWrapper = () => {
                 setArrowDegPersonal(`aside-panel__big-arrow`)
                 setDisplayPersonal(`${displayPersonal} App__two-page-personal-info_moded`)
                 setPersonalInfoEntrails(`${personalInfoEntrails} App__two-page-info-about-personal`)
-                setWindowName(['',windowName[1]])
+                setWindowName(['',windowName[1], '' ])
+                setActiveBio(false)
+                setActiveEducation(false)
             } else {
                 setArrowDegPersonal(`${arrowDegPersonal} aside-panel__big-arrow_deg`)
                 setDisplayPersonal('App__two-page-personal-info')
                 setPersonalInfoEntrails(`App__two-page-info-about`)
-                setWindowName(['personal-info',windowName[1]])
+                setWindowName(['personal-info',windowName[1], ''])
             }
         } else {
             if (displayContacts === 'App__two-page-contacts App__two-page-contacts_moded') {
@@ -50,7 +54,7 @@ const SecondRouteWrapper = () => {
     }
 
     const onCloseWindow = (e) => {
-        if (e.target.getAttribute('data-close') === 'personal-info') {
+        if (e.target.getAttribute('data-close') === 'personal-info; bio') {
             setDisplayPersonal(`${displayPersonal} App__two-page-personal-info_moded`)
             setWindowName(['',windowName[1]])
             setArrowDegPersonal(`aside-panel__big-arrow`)
@@ -61,20 +65,93 @@ const SecondRouteWrapper = () => {
         }
     }
 
+    console.log(windowName)
+    
+    const addWindow = (clazz, attribute) => {
+        let arr = [...windowName]
+
+        const updatedWindowName = windowName.map((value, index) => {
+            
+            let count = 0;
+
+            for (let i = 0; i < 3; i++) {
+                if (arr[i] === clazz){
+                    count++;
+                }
+            }
+            
+            if (count === 0) {
+                if (value === '' ) {
+                    arr[index]= clazz
+                    return clazz;
+                } else if (value === 'personal-info') {
+                    arr[index]= clazz
+                    return (`personal-info; ${attribute}`);
+                } else {
+                    arr[index]=value
+                    return value;
+                }
+            } else {
+                arr[index]=value
+                return value
+            }
+            });
+            
+            setWindowName(updatedWindowName);
+    }
+
+    const onSubVisiblebio = () => {  
+        if (!activeBio) {
+            addWindow('personal-info; bio', 'bio');
+        } else {
+
+            const updatedWindowName = windowName.map((value, index) => {
+                if (value === 'personal-info; bio') {
+                  return '';
+                } else {
+                  return value;
+                }
+              });
+              
+              setWindowName(updatedWindowName);
+        }
+
+        setActiveBio(!activeBio)
+    }
+
+    const onSubVisibleEducation = () => {
+        if (!activeEducation) {
+                addWindow('personal-info; education','education');    
+        } else {
+        
+            const updatedWindowName = windowName.map((value, index) => {
+                if (value === 'personal-info; education') {
+                  return '';
+                } else {
+                  return value;
+                }
+              });
+              
+              setWindowName(updatedWindowName);
+        }
+
+        setActiveEducation(!activeEducation)
+    }
+
     return (
         <main className="App__two-page-wrapper">
             <Gpspanel>
                 <AsideEntrails clazz={arrowDegPersonal} dataAttr='personal' onVisible={changeVisible} filter='personal-info'/>
                 <ol className={displayPersonal}>
-                    <li className={personalInfoEntrails}>
-                        <img src={arrow} alt="arrow" className={"App__two-page-img"} />
+                    <li onClick={onSubVisiblebio} className='App__two-page-info-about'>
+                        <img src={arrow} alt="arrow" style={{transform: activeBio  ? 'rotate(90deg)' : 'rotate(0deg)'}} className="App__two-page-img" />
                         <img src={bio} alt="education" className="App__two-page-folder" />
-                        <div className="App__two-page-name">bio</div>
+                        <div className="App__two-page-name" style={{color: activeBio  ? 'white' : '#607B96'}}>bio</div>
                     </li>
-                    <li className={personalInfoEntrails}>
-                        <img src={arrow} alt="arrow" className="App__two-page-img" />
+                    <li onClick={onSubVisibleEducation} className='App__two-page-info-about'>
+                        <img src={arrow} alt="arrow" style={{transform: activeEducation  ? 'rotate(90deg)' : 'rotate(0deg)'}} className="App__two-page-img" />
                         <img src={education} alt="education" className="App__two-page-folder" />
-                        <div className="App__two-page-name">education</div>
+                        <div className="App__two-page-name" style={{color: activeEducation  ? 'white' : '#607B96'}}>education</div>
                     </li>
                 </ol>
                 <AsideEntrails  clazz={arrowDegContacts} dataAttr='contacts' onVisible={changeVisible} filter='contacts'/>

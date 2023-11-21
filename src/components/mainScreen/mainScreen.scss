@@ -41,6 +41,9 @@
         font-weight: 450;
         line-height: 150%;
         margin-top: 18px;
+        &_dat{
+            width: 32px;
+        }
     }
     &__project{
         color: #5565E8;
@@ -151,4 +154,5 @@
         height: 38px;
         border: none;
     }
+    
 }

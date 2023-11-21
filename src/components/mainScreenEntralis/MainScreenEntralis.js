@@ -7,7 +7,7 @@ const MainScreenEntralis = () => {
             1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
             </div>  
             <p className="main-screen__text">
-            /** 
+                <span className="main-screen__text main-screen__text_dat">/**</span> 
                 * About me
                 * I have 5 years of еxperience in web
                 * development lorem ipsum dolor sit amet, 
@@ -22,7 +22,7 @@ const MainScreenEntralis = () => {
                 * voluptate velit esse cillum dolore eu fugiat 
                 * nulla pariatur. Excepteur sint occaecat 
                 * officia deserunt mollit anim id est laborum.
-                */
+                <span className="main-screen__text main-screen__text_dat">*/</span>  
             </p>
         </div>
     )
