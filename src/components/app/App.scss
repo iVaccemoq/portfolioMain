@@ -1,4 +1,6 @@
 @import '../../style/variables.scss';
+@import '../../style/animation.scss';
+
 
 .App{
     position: relative;
@@ -28,6 +30,66 @@
     }
     &__two-page-wrapper{
         display: flex;
+    }
+    &__two-page-asidePanelEntrails{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    &__two-page-info-about{
+        display: flex;  
+        margin-bottom: 8px;
+        cursor: pointer;
+        transition: 0.3s all;
+        &-personal{
+            visibility: hidden;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            opacity: 0;
+        }
+    }
+    &__two-page-img{
+        margin-left: 17px;
+        
+    }
+    &__two-page-folder{
+        margin-left: 13px;
+    }
+    &__two-page-name{
+        margin-left: 9px;
+        color: #607B96;
+        font-family: Fira Code;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    &__two-page-personal-info{
+        padding-top: 18px;
+        padding: 0;
+        padding-top: 18px;
+        transition: 0.5s;
+        &_moded{
+            visibility: hidden;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            opacity: 0;
+        }
+    }
+    &__two-page-contacts{
+        padding-top: 18px;
+        padding: 0;
+        padding-top: 18px;
+        transition: 0.3s;
+        &_moded{
+            visibility: hidden;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            opacity: 0;
+        }
     }
 }
 

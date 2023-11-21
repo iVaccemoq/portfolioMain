@@ -1,9 +1,14 @@
 import bigArrow from '../../resourses/weightArrow.svg';
 
-const AsideEntrails = (props) => {
+const AsideEntrails = (props) => {  
+
+
     return (
-        <div className="aside-panel__info">
-            <img className='aside-panel__big-arrow' src={bigArrow} alt="arrow" />
+        <div style={{color: props.clazz === 'aside-panel__big-arrow aside-panel__big-arrow_deg' ? 'white' : '#607B96'}} data-aside={props.dataAttr} className="aside-panel__info" onClick={(e) => {
+            props.onVisible(e)
+            
+        }}>
+            <img data-aside={props.dataAttr} className={props.clazz} src={bigArrow} alt="arrow" />
             {props.filter}
         </div>    
     )
