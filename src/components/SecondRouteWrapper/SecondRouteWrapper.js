@@ -30,24 +30,24 @@ const SecondRouteWrapper = () => {
                 setArrowDegPersonal(`aside-panel__big-arrow`)
                 setDisplayPersonal(`${displayPersonal} App__two-page-personal-info_moded`)
                 setPersonalInfoEntrails(`${personalInfoEntrails} App__two-page-info-about-personal`)
-                setWindowName(['',windowName[1], '' ])
+                deleteWindow('personal-info',true)
                 setActiveBio(false)
                 setActiveEducation(false)
             } else {
                 setArrowDegPersonal(`${arrowDegPersonal} aside-panel__big-arrow_deg`)
                 setDisplayPersonal('App__two-page-personal-info')
                 setPersonalInfoEntrails(`App__two-page-info-about`)
-                setWindowName(['personal-info',windowName[1], ''])
+                addWindow('personal-info')
             }
         } else {
             if (displayContacts === 'App__two-page-contacts App__two-page-contacts_moded') {
                 setArrowDegContacts(`aside-panel__big-arrow aside-panel__big-arrow_deg`)
                 setDisplayContacts('App__two-page-contacts')
-                setWindowName([windowName[0],'contacts'])
+                addWindow('contacts')
             } else {
                 setArrowDegContacts(`aside-panel__big-arrow`)
                 setDisplayContacts(`${displayContacts} App__two-page-contacts_moded`)
-                setWindowName([windowName[0],''])
+                deleteWindow('contacts')
             }
         }
         
@@ -64,10 +64,8 @@ const SecondRouteWrapper = () => {
             setArrowDegContacts(`aside-panel__big-arrow`)
         }
     }
-
-    console.log(windowName)
     
-    const addWindow = (clazz, attribute) => {
+    const addWindow = (clazz, attribute, sub) => {
         let arr = [...windowName]
 
         const updatedWindowName = windowName.map((value, index) => {
@@ -84,7 +82,7 @@ const SecondRouteWrapper = () => {
                 if (value === '' ) {
                     arr[index]= clazz
                     return clazz;
-                } else if (value === 'personal-info') {
+                } else if (value === 'personal-info' && sub!==undefined) {
                     arr[index]= clazz
                     return (`personal-info; ${attribute}`);
                 } else {
@@ -100,20 +98,34 @@ const SecondRouteWrapper = () => {
             setWindowName(updatedWindowName);
     }
 
+    const deleteWindow = (clazz, attribute, subAttribute) => {
+
+        const updatedWindowName = windowName.map((value, index) => {
+
+            if (attribute) {
+                if (value === clazz || value === 'personal-info; education' || value === 'personal-info; bio' ) {
+                    return '';
+                  } else {
+                    return value;
+                  }
+            } else if (!attribute) {
+                if (value === clazz) {
+                    return '';
+                  } else {
+                    return value;
+                  }
+            }
+            
+          });
+          
+          setWindowName(updatedWindowName);
+    }
+
     const onSubVisiblebio = () => {  
         if (!activeBio) {
-            addWindow('personal-info; bio', 'bio');
+            addWindow('personal-info; bio', 'bio', true);
         } else {
-
-            const updatedWindowName = windowName.map((value, index) => {
-                if (value === 'personal-info; bio') {
-                  return '';
-                } else {
-                  return value;
-                }
-              });
-              
-              setWindowName(updatedWindowName);
+            deleteWindow('personal-info; bio')
         }
 
         setActiveBio(!activeBio)
@@ -121,22 +133,15 @@ const SecondRouteWrapper = () => {
 
     const onSubVisibleEducation = () => {
         if (!activeEducation) {
-                addWindow('personal-info; education','education');    
+                addWindow('personal-info; education','education', true);    
         } else {
-        
-            const updatedWindowName = windowName.map((value, index) => {
-                if (value === 'personal-info; education') {
-                  return '';
-                } else {
-                  return value;
-                }
-              });
-              
-              setWindowName(updatedWindowName);
+            deleteWindow('personal-info; education')
         }
 
         setActiveEducation(!activeEducation)
     }
+
+    console.log(windowName)
 
     return (
         <main className="App__two-page-wrapper">
