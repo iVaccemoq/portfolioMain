@@ -16,13 +16,15 @@
         border-bottom: 1px solid #1E2D3D; 
         border-top: 1px solid #1E2D3D; 
         cursor: pointer;
+        &_active {
+            color: white;
+        }
     }
     &__big-arrow{
         margin-left: 17px;
         margin-right: 8px;
         transform: rotate(-90deg);
-        transition: 0.3s;
-        &_deg{
+        &_active {
             transform: rotate(0deg);
         }
     }

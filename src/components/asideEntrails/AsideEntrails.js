@@ -2,14 +2,22 @@ import bigArrow from '../../resourses/weightArrow.svg';
 
 const AsideEntrails = (props) => {  
 
+    const regExp = new RegExp(props.dataAttr);
+
+    let clazz = "aside-panel__info"
+    let imgClazz = 'aside-panel__big-arrow'
+
+    props.toggleClass.forEach(item => {
+        if (item.match(regExp) !== null) {
+            clazz = `${clazz}_active aside-panel__info`
+            imgClazz = `${imgClazz}_active aside-panel__big-arrow`
+        }
+    })
 
     return (
-        <div style={{color: props.clazz === 'aside-panel__big-arrow aside-panel__big-arrow_deg' ? 'white' : '#607B96'}} data-aside={props.dataAttr} className="aside-panel__info" onClick={(e) => {
-            props.onVisible(e)
-            
-        }}>
-            <img data-aside={props.dataAttr} className={props.clazz} src={bigArrow} alt="arrow" />
-            {props.filter}
+        <div data-folder={props.dataAttr} className={clazz} >
+            <img className={imgClazz} src={bigArrow} alt="arrow" />
+            {props.name}
         </div>    
     )
 }
