@@ -4,17 +4,16 @@ import WindowEntrails from '../windowEntrails/WindowEntrails';
 
 const Window = (props) => {
 
-    /* let windows = []
-
-    for (let item in props.window) {
-        if (props.window[item]!==''){
-            windows[item] = <WindowEntrails windowName={props.window[item]} onCloseWindow={props.onCloseWindow}/>
+    const names = props.windowName.map(item => {
+        if (item !== '') {
+           return <WindowEntrails name={item}/>
         }
-    } */
+    })
+
 
     return (
         <div className="window">
-            personal-info; bio
+            {names}
         </div>
     )
 

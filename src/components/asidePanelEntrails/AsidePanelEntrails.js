@@ -1,6 +1,8 @@
-import bio from '../../resourses/bioFolder.svg'
-import education from '../../resourses/educationFolder.svg'
+import bioIcon from '../../resourses/bioFolder.svg'
+import educationIcon from '../../resourses/educationFolder.svg'
 import arrow from '../../resourses/smalArrow.svg'
+
+import ListFolder from '../listFolders/ListFolder'
 
 const AsidePanelEntrails = (props) => {
 
@@ -16,16 +18,8 @@ const AsidePanelEntrails = (props) => {
 
     return (
         <ol className={clazz}>
-            <li data-folders='bio' className='App__two-page-info-about'>
-                <img data-folders='bio' src={arrow} alt="arrow" className="App__two-page-img" />
-                <img data-folders='bio' src={bio} alt="education" className="App__two-page-folder" />
-                <div data-folders='bio' className="App__two-page-name">bio</div>
-            </li>
-            <li data-folders='education' className='App__two-page-info-about'>
-                <img data-folders='education' src={arrow} alt="arrow" className="App__two-page-img" />
-                <img data-folders='education' src={education} alt="education" className="App__two-page-folder" />
-                <div data-folders='education' className="App__two-page-name">education</div>
-            </li>
+            <ListFolder name='bio' dataAttr='bio' img={bioIcon} toggleChildClass={props.toggleChildClass}/>
+            <ListFolder name='education' dataAttr='education' img={educationIcon} toggleChildClass={props.toggleChildClass}/>
         </ol>
     )
 }

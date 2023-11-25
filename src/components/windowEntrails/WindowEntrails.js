@@ -1,10 +1,11 @@
 import close from '../../resourses/close.svg';
 
 const WindowEntrails = (props) => {
+    console.log(props.name)
     return (
         <div className="window__wrapper">
-            {props.windowName}
-            <img data-close={props.windowName} className='window__img' src={close} alt="close" onClick={(e) => props.onCloseWindow(e)} />
+            {props.name}
+            <img className='window__img' src={close} alt="close" />
         </div>
     )
 }
