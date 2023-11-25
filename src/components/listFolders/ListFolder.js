@@ -1,5 +1,6 @@
 import arrow from '../../resourses/smalArrow.svg'
 
+
 const ListFolder = (props) => {
 
     const regExp = new RegExp(props.dataAttr);
@@ -16,9 +17,8 @@ const ListFolder = (props) => {
 
     return (
         <li data-folders={props.dataAttr} className='App__two-page-info-about'>
-            <img data-folders={props.dataAttr} src={arrow} alt="arrow" className={imgClazz} />
             <img data-folders={props.dataAttr} src={props.img} alt={props.name} className="App__two-page-folder" />
-            <div data-folders={props.dataAttr} className={clazz}>{props.name}</div>
+            <div data-folders={props.dataAttr} className="App__two-page-name">{props.name}</div>
         </li>
     )
 }

@@ -17,6 +17,7 @@ const AsideEntrails = (props) => {
     return (
         <div data-folder={props.dataAttr} className={clazz} >
             <img className={imgClazz} src={bigArrow} alt="arrow" />
+            <img className='aside-panel__big-arrow aside-panel__big-arrow_active' src={props.img} alt="arrow" />
             {props.name}
         </div>    
     )
