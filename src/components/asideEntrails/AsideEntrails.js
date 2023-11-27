@@ -1,5 +1,7 @@
 import bigArrow from '../../resourses/weightArrow.svg';
 
+import arrow from '../../resourses/angle-right-solid.svg'
+
 const AsideEntrails = (props) => {  
 
     const regExp = new RegExp(props.dataAttr);
@@ -16,8 +18,8 @@ const AsideEntrails = (props) => {
 
     return (
         <div data-folder={props.dataAttr} className={clazz} >
-            <img className={imgClazz} src={bigArrow} alt="arrow" />
-            <img className='aside-panel__big-arrow aside-panel__big-arrow_active' src={props.img} alt="arrow" />
+            <img className={imgClazz} src={arrow} alt="arrow" />
+            <img src={props.img} className='aside-panel__folder' alt="folder" />
             {props.name}
         </div>    
     )

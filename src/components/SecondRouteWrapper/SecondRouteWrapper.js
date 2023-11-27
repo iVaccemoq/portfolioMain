@@ -17,6 +17,7 @@ const SecondRouteWrapper = () => {
     const [toggleClass, setToggleClass] = useState(['personal-info_active', '','']);
     const [toggleChildClass, setToggleChildClass] = useState(['bio_active','']);
     const [windowName, setWindowName] = useState(['bio.txt','']);
+    const [mainScreen, setMainScreen] = useState('bio');
 
     const onActive = (e) => {
 
@@ -30,7 +31,7 @@ const SecondRouteWrapper = () => {
 
     const onWindow = (e) => {
         if (e.target.getAttribute('data-folders') !== null) {
-             setWindowName(toggleChildName(e, 'data-folders'))
+             setWindowName(toggleName(e, 'data-folders'))
          }
      }
 
@@ -82,22 +83,26 @@ const SecondRouteWrapper = () => {
         
     }
 
-    const toggleChildName = (e, dataAttr) => {
+    const toggleName = (e, dataAttr) => {
+
+        setMainScreen(e.target.getAttribute(dataAttr));
 
         const copyArr = windowName.slice(0);
         let childNames = [];
-        let counter = 0;
 
         childNames = windowName.map((item,i) => {
 
-            copyArr.forEach(item => {
-                if (item === `${e.target.getAttribute(dataAttr)}.txt`) {
+            let counter = 0;
+
+            copyArr.forEach(attr => {
+                if (attr === `${e.target.getAttribute(dataAttr)}.txt`) {
                     counter++
                 }
             })
 
             if (item === '' && counter === 0) {
-                copyArr[i] = e.target.getAttribute(dataAttr);
+                copyArr[i] = `${e.target.getAttribute(dataAttr)}.txt`;
+                setMainScreen(e.target.getAttribute(dataAttr));
                 return `${e.target.getAttribute(dataAttr)}.txt`
             } else {
                 copyArr[i] = item;
@@ -106,6 +111,40 @@ const SecondRouteWrapper = () => {
         })
         return childNames
         
+    }
+
+    console.log(windowName)
+
+    const toggleMainScreen = (dataAttr) => {
+        setMainScreen(dataAttr)
+    }
+
+    const onClose = (e) => {
+        let arr = [];
+        for (let key in windowName) {
+            if (e.target.getAttribute('data-close') === windowName[key]) {
+                arr[key] = ''
+            } else {
+                arr[key] = windowName[key]
+            } 
+
+            
+        }
+
+        let counter = 0;
+        arr.forEach((item,i) => {
+            if (item !== '') {
+                setMainScreen(item.slice(0,-4))
+            } else {
+                counter++
+            }
+        })
+
+        if (counter === 2) {
+            setMainScreen('')
+        }
+
+        setWindowName(arr)
     }
 
     return (
@@ -117,8 +156,8 @@ const SecondRouteWrapper = () => {
                 <AsidePanelEntrailsContacts dataAttr='contacts' toggleClass={toggleClass}/>
             </Gpspanel>
             <MainScreen>
-                <Window windowName={windowName}/>
-                <MainScreenEntralis/>
+                <Window windowName={windowName} toggleMainScreen={toggleMainScreen} onClose={onClose} mainScreen={mainScreen}/>
+                <MainScreenEntralis frame={mainScreen}/>
                 <Scroll/>
             </MainScreen>
         </main>

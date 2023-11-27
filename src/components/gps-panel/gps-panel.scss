@@ -21,11 +21,15 @@
         }
     }
     &__big-arrow{
-        margin-left: 17px;
+        margin-left: 5px;
         margin-right: 8px;
-        transform: rotate(-90deg);
+        height: 20px;
+        width: 10px;
         &_active {
-            transform: rotate(0deg);
+            transform: rotate(90deg);
         }
+    }
+    &__folder{
+        margin-right: 5px;
     }
 }
