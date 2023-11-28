@@ -1,5 +1,4 @@
 import txt from '../../resourses/txtFormat.svg'
-import arrow from '../../resourses/smalArrow.svg'
 
 import ListFolder from '../listFolders/ListFolder'
 
@@ -17,9 +16,12 @@ const AsidePanelEntrails = (props) => {
 
     return (
         <ol className={clazz}>
-            <ListFolder name='bio.txt' dataAttr='bio' img={txt} toggleChildClass={props.toggleChildClass}/>
-            <ListFolder name='education.txt' dataAttr='education' img={txt} toggleChildClass={props.toggleChildClass}/>
-            
+            <ListFolder name='bio.txt' dataAttr='bio' img={txt} toggleChildClass={props.toggleChildClass}>
+                
+            </ListFolder>
+            <ListFolder name='education.txt' dataAttr='education' img={txt} toggleChildClass={props.toggleChildClass}>
+                
+            </ListFolder>  
         </ol>
     )
 }

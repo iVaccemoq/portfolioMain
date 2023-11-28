@@ -1,4 +1,4 @@
-import bigArrow from '../../resourses/weightArrow.svg';
+
 
 import arrow from '../../resourses/angle-right-solid.svg'
 
@@ -8,7 +8,7 @@ const AsideEntrails = (props) => {
 
     let clazz = "aside-panel__info"
     let imgClazz = 'aside-panel__big-arrow'
-
+    
     props.toggleClass.forEach(item => {
         if (item.match(regExp) !== null) {
             clazz = `${clazz}_active aside-panel__info`

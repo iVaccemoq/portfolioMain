@@ -4,19 +4,19 @@ import Window from "../window/Window"
 import Scroll from "../scroll/Scroll"
 import AsideEntrails from "../asideEntrails/AsideEntrails"
 import MainFrameThirdPage from "../mainFrameThirdPage/MainFrameThirdPage"
-import AsidePanelEntrails from "../asidePanelEntrails/AsidePanelEntrails"
+import AsidePanelEntrailsProjects from "../asidePanelEntrailsProjects/AsidePanelEntrailsProjects"
 
-import blueIco from '../../resourses/blueFolder.svg'
+import greenIco from '../../resourses/greenIco.svg'
 
 import { useState } from "react";
 
 const ThirdRouteWrapper = () => {
 
-    const [toggleClass, setToggleClass] = useState(['personal-info_active', '','']);
-    const [toggleChildClass, setToggleChildClass] = useState(['bio_active','']);
-    const [windowName, setWindowName] = useState(['bio.txt','']);
-    const [mainScreen, setMainScreen] = useState('bio');
-
+    const [toggleClass, setToggleClass] = useState(['projects_active']);
+    const [toggleChildClass, setToggleChildClass] = useState(['react_active','','','']);
+    const [windowName, setWindowName] = useState(['react','', '', '']);
+    const [mainScreen, setMainScreen] = useState('react');
+    console.log(mainScreen)
     const onActive = (e) => {
 
         if (e.target.getAttribute('data-folder') !== null) {
@@ -93,15 +93,15 @@ const ThirdRouteWrapper = () => {
             let counter = 0;
 
             copyArr.forEach(attr => {
-                if (attr === `${e.target.getAttribute(dataAttr)}.txt`) {
+                if (attr === `${e.target.getAttribute(dataAttr)}`) {
                     counter++
                 }
             })
 
             if (item === '' && counter === 0) {
-                copyArr[i] = `${e.target.getAttribute(dataAttr)}.txt`;
+                copyArr[i] = `${e.target.getAttribute(dataAttr)}`;
                 setMainScreen(e.target.getAttribute(dataAttr));
-                return `${e.target.getAttribute(dataAttr)}.txt`
+                return `${e.target.getAttribute(dataAttr)}`
             } else {
                 copyArr[i] = item;
                 return item;
@@ -111,13 +111,12 @@ const ThirdRouteWrapper = () => {
         
     }
 
-    console.log(windowName)
-
     const toggleMainScreen = (dataAttr) => {
         setMainScreen(dataAttr)
     }
 
     const onClose = (e) => {
+
         let arr = [];
         for (let key in windowName) {
             if (e.target.getAttribute('data-close') === windowName[key]) {
@@ -132,13 +131,13 @@ const ThirdRouteWrapper = () => {
         let counter = 0;
         arr.forEach((item,i) => {
             if (item !== '') {
-                setMainScreen(item.slice(0,-4))
+                setMainScreen(item)
             } else {
                 counter++
             }
         })
 
-        if (counter === 2) {
+        if (counter === 4) {
             setMainScreen('')
         }
 
@@ -148,8 +147,8 @@ const ThirdRouteWrapper = () => {
     return (
         <main className="App__two-page-wrapper">
             <Gpspanel onActive={onActive} onWindow={onWindow}>
-                <AsideEntrails img={blueIco} dataAttr='personal-info' name={'personal-info'} toggleClass={toggleClass}/>
-                <AsidePanelEntrails dataAttr='personal-info' toggleChildClass={toggleChildClass} toggleClass={toggleClass}/>
+                <AsideEntrails img={greenIco} dataAttr='projects' name={'projects'} toggleClass={toggleClass}/>
+                <AsidePanelEntrailsProjects dataAttr='projects' toggleChildClass={toggleChildClass} toggleClass={toggleClass} main={mainScreen}/>
             </Gpspanel>
             <MainScreen>
                 <Window windowName={windowName} toggleMainScreen={toggleMainScreen} onClose={onClose} mainScreen={mainScreen}/>
