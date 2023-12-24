@@ -16,7 +16,7 @@ const ThirdRouteWrapper = () => {
     const [toggleChildClass, setToggleChildClass] = useState(['react_active','','','']);
     const [windowName, setWindowName] = useState(['react','', '', '']);
     const [mainScreen, setMainScreen] = useState('react');
-    console.log(mainScreen)
+
     const onActive = (e) => {
 
         if (e.target.getAttribute('data-folder') !== null) {

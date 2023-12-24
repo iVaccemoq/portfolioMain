@@ -6,7 +6,7 @@ import MainScreenEntralis from "../mainScreenEntralis/MainScreenEntralis";
 import Scroll from "../scroll/Scroll";
 import AsidePanelEntrails from "../asidePanelEntrails/AsidePanelEntrails";
 import AsidePanelEntrailsContacts from "../asidePanelEntrailsContacts/AsidePanelEntrailsContacts";
-import ListFolder from "../listFolders/ListFolder";
+
 
 import bioIcon from '../../resourses/bioFolder.svg'
 import educationIcon from '../../resourses/educationFolder.svg'
@@ -115,7 +115,7 @@ const SecondRouteWrapper = () => {
     }
 
     const toggleMainScreen = (dataAttr) => {
-        setMainScreen(dataAttr)
+        setMainScreen(dataAttr.slice(0,-4))
     }
 
     const onClose = (e) => {
@@ -145,6 +145,8 @@ const SecondRouteWrapper = () => {
 
         setWindowName(arr)
     }
+
+    console.log(mainScreen)
 
     return (
         <main className="App__two-page-wrapper">

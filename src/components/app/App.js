@@ -15,17 +15,16 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+
         <Header/>
-
         <Routes>
-
+          
           <Route path='/' element={<FirstRouteWrapper />} key={1}/>
           <Route path='/about' element={<SecondRouteWrapper />} key={2}/>
           <Route path='/projects' element={<ThirdRouteWrapper />} key={3}/>
           <Route path='/contacts' element={<FourthRouteWrapper />} key={4}/>
-
+          
         </Routes>
-
         <Footer/>
       </div>
     </BrowserRouter>
