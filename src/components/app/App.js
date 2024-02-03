@@ -6,10 +6,14 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
-import FirstRouteWrapper from '../firstRouteWrapper/FirstRouteWrapper';
+import FirstRouteWrapper from '../pages/firstRouteWrapper/FirstRouteWrapper';
+import SecondRouteWrapper from '../pages/SecondRouteWrapper/SecondRouteWrapper';
+import ThirdRouteWrapper from '../pages/thirdRouteWrapper/ThirdRouteWrapper';
+import FourthRouteWrapper from '../pages/fourthRouteWrapper/FourthRouteWrapper';
+/* import FirstRouteWrapper from '../firstRouteWrapper/FirstRouteWrapper';
 import SecondRouteWrapper from '../SecondRouteWrapper/SecondRouteWrapper';
 import ThirdRouteWrapper from '../thirdRouteWrapper/ThirdRouteWrapper';
-import FourthRouteWrapper from '../fourthRouteWrapper/FourthRouteWrapper';
+import FourthRouteWrapper from '../fourthRouteWrapper/FourthRouteWrapper'; */
 
 function App() {
   return (

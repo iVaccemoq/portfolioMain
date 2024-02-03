@@ -1,24 +1,21 @@
-import Gpspanel from "../gps-panel/Gps-panel";
-import AsideEntrails from "../asideEntrails/AsideEntrails";
-import MainScreen from "../mainScreen/MainScreen";
-import Window from "../window/Window";
-import MainScreenEntralis from "../mainScreenEntralis/MainScreenEntralis";
-import Scroll from "../scroll/Scroll";
-import AsidePanelEntrails from "../asidePanelEntrails/AsidePanelEntrails";
-import AsidePanelEntrailsContacts from "../asidePanelEntrailsContacts/AsidePanelEntrailsContacts";
+import Gpspanel from "../../gps-panel/Gps-panel"
+import MainScreen from "../../mainScreen/MainScreen"
+import Window from "../../window/Window"
+import Scroll from "../../scroll/Scroll"
+import AsideEntrails from "../../asideEntrails/AsideEntrails"
+import MainFrameThirdPage from "../../mainFrameThirdPage/MainFrameThirdPage"
+import AsidePanelEntrailsProjects from "../../asidePanelEntrailsProjects/AsidePanelEntrailsProjects"
 
-
-import bioIcon from '../../resourses/bioFolder.svg'
-import educationIcon from '../../resourses/educationFolder.svg'
+import greenIco from '../../../resourses/greenIco.svg'
 
 import { useState } from "react";
 
-const SecondRouteWrapper = () => {
+const ThirdRouteWrapper = () => {
 
-    const [toggleClass, setToggleClass] = useState(['personal-info_active', '','']);
-    const [toggleChildClass, setToggleChildClass] = useState(['bio_active','']);
-    const [windowName, setWindowName] = useState(['bio.txt','']);
-    const [mainScreen, setMainScreen] = useState('bio');
+    const [toggleClass, setToggleClass] = useState(['projects_active']);
+    const [toggleChildClass, setToggleChildClass] = useState(['react_active','','','']);
+    const [windowName, setWindowName] = useState(['react','', '', '']);
+    const [mainScreen, setMainScreen] = useState('react');
 
     const onActive = (e) => {
 
@@ -96,15 +93,15 @@ const SecondRouteWrapper = () => {
             let counter = 0;
 
             copyArr.forEach(attr => {
-                if (attr === `${e.target.getAttribute(dataAttr)}.txt`) {
+                if (attr === `${e.target.getAttribute(dataAttr)}`) {
                     counter++
                 }
             })
 
             if (item === '' && counter === 0) {
-                copyArr[i] = `${e.target.getAttribute(dataAttr)}.txt`;
+                copyArr[i] = `${e.target.getAttribute(dataAttr)}`;
                 setMainScreen(e.target.getAttribute(dataAttr));
-                return `${e.target.getAttribute(dataAttr)}.txt`
+                return `${e.target.getAttribute(dataAttr)}`
             } else {
                 copyArr[i] = item;
                 return item;
@@ -115,10 +112,11 @@ const SecondRouteWrapper = () => {
     }
 
     const toggleMainScreen = (dataAttr) => {
-        setMainScreen(dataAttr.slice(0,-4))
+        setMainScreen(dataAttr)
     }
 
     const onClose = (e) => {
+
         let arr = [];
         for (let key in windowName) {
             if (e.target.getAttribute('data-close') === windowName[key]) {
@@ -133,37 +131,32 @@ const SecondRouteWrapper = () => {
         let counter = 0;
         arr.forEach((item,i) => {
             if (item !== '') {
-                setMainScreen(item.slice(0,-4))
+                setMainScreen(item)
             } else {
                 counter++
             }
         })
 
-        if (counter === 2) {
+        if (counter === 4) {
             setMainScreen('')
         }
 
         setWindowName(arr)
     }
 
-    console.log(mainScreen)
-
     return (
         <main className="App__two-page-wrapper">
             <Gpspanel onActive={onActive} onWindow={onWindow}>
-                <AsideEntrails img={bioIcon} dataAttr='personal-info' name={'personal-info'} toggleClass={toggleClass}/>
-                <AsidePanelEntrails dataAttr='personal-info' toggleChildClass={toggleChildClass} toggleClass={toggleClass}/>
-                <AsideEntrails img={educationIcon} dataAttr='contacts' name={'contacts'} toggleClass={toggleClass}/>
-                <AsidePanelEntrailsContacts dataAttr='contacts' toggleClass={toggleClass}/>
+                <AsideEntrails img={greenIco} dataAttr='projects' name={'projects'} toggleClass={toggleClass}/>
+                <AsidePanelEntrailsProjects dataAttr='projects' toggleChildClass={toggleChildClass} toggleClass={toggleClass} main={mainScreen}/>
             </Gpspanel>
             <MainScreen>
                 <Window windowName={windowName} toggleMainScreen={toggleMainScreen} onClose={onClose} mainScreen={mainScreen}/>
-                <MainScreenEntralis frame={mainScreen}/>
+                <MainFrameThirdPage frame={mainScreen}/>
                 <Scroll/>
             </MainScreen>
         </main>
     )
 }
 
-export default SecondRouteWrapper;
-
+export default ThirdRouteWrapper;

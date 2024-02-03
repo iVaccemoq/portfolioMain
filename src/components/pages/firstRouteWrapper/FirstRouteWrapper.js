@@ -1,9 +1,11 @@
-import Container from "../container/Container"
-import AboutMe from "../aboutMe/AboutMe"
-import SnakeGame from "../snakeGame/SnakeGame"
+import Container from '../../container/Container'
+import AboutMe from '../../aboutMe/AboutMe'
+import SnakeGame from '../../snakeGame/SnakeGame'
 
-import greenBlur from '../../resourses/Green.svg'
-import blueBlur from '../../resourses/Blue.svg'
+
+
+import greenBlur from '../../../resourses/Green.svg'
+import blueBlur from '../../../resourses/Blue.svg'
 
 
 const FirstRouteWrapper = () => {

@@ -1,4 +1,3 @@
-import txt from '../../resourses/txtFormat.svg'
 import bioImg from '../../resourses/bio.svg'
 import education from '../../resourses/education.svg'
 
