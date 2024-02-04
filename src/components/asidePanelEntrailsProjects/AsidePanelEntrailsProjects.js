@@ -20,8 +20,7 @@ const AsidePanelEntrailsProjects = (props) => {
     return (
         <ol className={clazz}>
             <ListFolderProjects name='React' dataAttr='react' img={react} toggleChildClass={props.toggleChildClass}/>
-            <ListFolderProjects name='HTML' dataAttr='html' img={html} toggleChildClass={props.toggleChildClass}/> 
-            <ListFolderProjects name='CSS' dataAttr='css' img={css} toggleChildClass={props.toggleChildClass}/> 
+            <ListFolderProjects name='HTML/CSS' dataAttr='html' img={html} toggleChildClass={props.toggleChildClass}/> 
             <ListFolderProjects name='JS' dataAttr='js' img={js} toggleChildClass={props.toggleChildClass}/> 
         </ol>
     )

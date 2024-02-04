@@ -1,6 +1,3 @@
-import bioImg from '../../resourses/bio.svg'
-import education from '../../resourses/education.svg'
-
 import ListFolder from '../listFolders/ListFolder'
 
 const AsidePanelEntrails = (props) => {
@@ -17,12 +14,13 @@ const AsidePanelEntrails = (props) => {
 
     return (
         <ol className={clazz}>
-            <ListFolder 
+            {/* <ListFolder 
                 name='bio.txt' dataAttr='bio' img={bioImg} toggleChildClass={props.toggleChildClass}>     
             </ListFolder>
             <ListFolder 
                 name='education.txt' dataAttr='education' img={education} toggleChildClass={props.toggleChildClass}>    
-            </ListFolder>  
+            </ListFolder>   */}
+            {props.render(props.toggleChildClass)}
         </ol>
     )
 }

@@ -1,6 +1,3 @@
-
-
-
 import './gps-panel.scss'
 
 const Gpspanel = (props) => {

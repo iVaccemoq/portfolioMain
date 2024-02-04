@@ -29,7 +29,7 @@ const ThirdRouteWrapper = () => {
 
     const onWindow = (e) => {
         if (e.target.getAttribute('data-folders') !== null) {
-             setWindowName(toggleName(e, 'data-folders'))
+            setWindowName(toggleName(e, 'data-folders'))  
          }
      }
 
@@ -82,6 +82,7 @@ const ThirdRouteWrapper = () => {
     }
 
     const toggleName = (e, dataAttr) => {
+
 
         setMainScreen(e.target.getAttribute(dataAttr));
 

@@ -6,10 +6,14 @@ import MainScreenEntralis from "../../mainScreenEntralis/MainScreenEntralis";
 import Scroll from "../../scroll/Scroll";
 import AsidePanelEntrails from "../../asidePanelEntrails/AsidePanelEntrails";
 import AsidePanelEntrailsContacts from "../../asidePanelEntrailsContacts/AsidePanelEntrailsContacts";
-
+import RenderPaternComponent from "../../renderPaternComponent/RenderPaternComponent";
+import RenderPaternContactsSlide from "../../renderPaternContactsSlide/RenderPaternContactsSlide";
 
 import bioIcon from '../../../resourses/bioFolder.svg'
 import educationIcon from '../../../resourses/educationFolder.svg'
+
+import phone from '../../../resourses/phone-icon.svg'
+import email from '../../../resourses/mail-icon.svg'
 
 import { useState } from "react";
 
@@ -146,15 +150,24 @@ const SecondRouteWrapper = () => {
         setWindowName(arr)
     }
 
-    console.log(mainScreen)
-
     return (
         <main className="App__two-page-wrapper">
             <Gpspanel onActive={onActive} onWindow={onWindow}>
                 <AsideEntrails img={bioIcon} dataAttr='personal-info' name={'personal-info'} toggleClass={toggleClass}/>
-                <AsidePanelEntrails dataAttr='personal-info' toggleChildClass={toggleChildClass} toggleClass={toggleClass}/>
+                <AsidePanelEntrails 
+                    render = {(props) => <RenderPaternComponent toggleChildClass={props} />} 
+                    dataAttr='personal-info' 
+                    toggleChildClass={toggleChildClass} 
+                    toggleClass={toggleClass}/>
                 <AsideEntrails img={educationIcon} dataAttr='contacts' name={'contacts'} toggleClass={toggleClass}/>
-                <AsidePanelEntrailsContacts dataAttr='contacts' toggleClass={toggleClass}/>
+                <AsidePanelEntrailsContacts 
+                    first={'Konstantin@vasilivanov.ru'}
+                    second={'8 (995) 918-31-89'}
+                    email={email}
+                    phone={phone}
+                    dataAttr='contacts' 
+                    toggleClass={toggleClass}
+                    render = {(...props) => <RenderPaternContactsSlide props={{props}}/> }/>
             </Gpspanel>
             <MainScreen>
                 <Window windowName={windowName} toggleMainScreen={toggleMainScreen} onClose={onClose} mainScreen={mainScreen}/>

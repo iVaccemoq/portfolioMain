@@ -1,5 +1,4 @@
-import check from '../../resourses/Check.svg'
-import checkTrue from '../../resourses/Checktrue.svg'
+
 
 const ListFolderProjects = (props) => {
 

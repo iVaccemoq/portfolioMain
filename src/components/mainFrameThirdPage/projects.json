@@ -1,0 +1,32 @@
+{
+  "react": [
+    {
+      "title": "marvel-project",
+      "description": "Первый герой в рейтинге!"
+    },
+    {
+      "title": "huinya",
+      "description": "второй герой в рейтинге!"
+    }
+  ],
+  "html": [
+    {
+      "title": "html-project",
+      "description": "Соси член"
+    },
+    {
+      "title": "dolbaeb",
+      "description": "dvajdi"
+    }
+  ],
+  "js": [
+    {
+      "title": "coffe",
+      "description": "js test"
+    },
+    {
+      "title": "realhui",
+      "description": "sosuch"
+    }
+  ]
+}

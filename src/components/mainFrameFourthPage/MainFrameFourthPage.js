@@ -13,7 +13,8 @@ const MainFrameFourthPage = () => {
                 <button className="main-screen__form-button">submit-message</button>
             </form>
             <div className="">
-                ЗДЕСЬ БУДЕТ КОД
+                <div className="main-screen__form-btton">1<span>const</span> button = document.querySelector(<span>'#sendBtn'</span>);</div>
+
             </div>
         </div>
     )
