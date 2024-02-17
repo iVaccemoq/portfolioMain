@@ -13,9 +13,13 @@
             justify-content: space-between;
         }
         &_fourth-page{
-            padding-right: 75px;
             padding-left: 128px;
         }
+    }
+    &__aboutme{
+        display: flex;
+        position: relative;
+        width: 657px;
     }
     &__number{
         display: flex;
@@ -32,18 +36,28 @@
         font-weight: 450;
         line-height: 150%;
     }
-    &__text{
-        width: 569px;
+    &__text{   
+        width: 543px;
+        padding-top: 18px;
+        border-right: 1px solid #1E2D3D;
+        &_dat{
+            width: 32px;
+            display: block;
+            color: #607B96;
+            font-family: Fira Code;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 450;
+            line-height: 150%;
+        }
+    }
+    &__main{
         color: #607B96;
         font-family: Fira Code;
         font-size: 18px;
         font-style: normal;
         font-weight: 450;
         line-height: 150%;
-        margin-top: 18px;
-        &_dat{
-            width: 32px;
-        }
     }
     &__project{
         color: #5565E8;

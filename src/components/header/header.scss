@@ -39,9 +39,6 @@
             align-items:center;
             justify-content: center;
             transition: 0.3s;
-            &:hover{
-                color: white;
-            }
             &:nth-child(1) {
                 &:hover{
                     color: #607B96;

@@ -1,0 +1,103 @@
+.online-code{
+    padding: 115px 75px 301px 171px;
+    &__global-wrapper{
+        color: white;
+        width: 593px;
+        overflow-wrap: break-word;
+    }
+    &__row{
+        width: 100%;
+        position: relative;
+        min-height: 27px;
+        &:nth-child(11) {
+            margin-left: 12px;
+        }
+        &:nth-child(2) {
+            color: #011627;
+        }
+        &:nth-child(9) {
+            color: #011627;
+        }
+        @for $i from 4 to 8 {        
+            &:nth-child(#{$i}) {
+                margin-left: 12px;
+            }
+            &:nth-child(#{$i}) {
+                margin-left: 12px;
+            }
+            &:nth-child(#{$i}) {
+                margin-left: 12px;
+            }
+            &:nth-child(#{$i}) {
+                margin-left: 12px;
+            }
+        }
+        
+        @for $i from 1 to 13 {        
+            &:nth-child(#{$i}) {
+                @if ($i == 4) or ($i == 5) or ($i == 6) or ($i == 7) or ($i == 11) {
+                    &::before {
+                        content: "#{$i}";
+                        position: absolute;
+                        left: -52px;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 150%;
+                        text-align: right;
+                        color: #607b96;
+                        font-family: Fira Code;
+                      }
+                } @else {
+                    &::before {
+                        content: "#{$i}";
+                        position: absolute;
+                        left: -40px;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 150%;
+                        text-align: right;
+                        color: #607b96;
+                        font-family: Fira Code;
+                      }
+                }
+              
+            }
+        }
+        
+    }
+    &__const{
+        font-family: Fira Code;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        color: #c98bdf;
+
+    }
+    &__var{
+        font-family: Fira Code;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        color: #5565e8;
+    }
+    &__text{
+        font-family: Fira Code;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        color: #fea55f;
+        
+    }
+    &__grey{
+        font-family: Fira Code;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        color: #607b96;
+    }
+    &__not-used{
+        color: #607b96;
+    }
+
+    
+}
